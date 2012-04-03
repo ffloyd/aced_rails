@@ -37,7 +37,7 @@ So, you can add in application.js lines like this:
 //= require ace/mode-textile
 ```
 
-And follow ACE's wiki for implementation.
+And follow ACE's wiki for instructions.
 
 Contributing
 ------------
