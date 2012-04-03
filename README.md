@@ -10,8 +10,6 @@ My English is bad, i know. So, i glad to any grammar fixes too. =)
 Installation
 ------------
 
-*(This gem isn't on rubyforge yet!)*
-
 Add this line to your application's Gemfile:
 
     gem 'aced_rails'
@@ -28,6 +26,18 @@ Usage
 -----
 
 *Gem is under construction...*
+
+At this moment this only gem provides all ACE's javascripts in vendor/javascripts/ace/*.js
+
+So, you can add in application.js lines like this:
+
+```javascript
+//= require ace/ace
+//= require ace/theme-twilight
+//= require ace/mode-textile
+```
+
+And follow ACE's wiki for implementation.
 
 Contributing
 ------------
