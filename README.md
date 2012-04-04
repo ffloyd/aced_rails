@@ -5,7 +5,7 @@ This gem provide some generators and helpers for using [Ajax.org Cloud9 Editor](
 
 This's my first gem, so i'll be pleasure for any comments or pull requests.
 
-My English is bad, i know. So, i glad to any grammar fixes too. =)
+My English is bad, i know. So, i'll be glad to any grammar fixes too. =)
 
 Installation
 ------------
@@ -27,7 +27,7 @@ Usage
 
 *Gem is under construction...*
 
-At this moment this only gem provides all ACE's javascripts in vendor/javascripts/ace/*.js
+At this moment this gem only provides all ACE's javascripts in vendor/javascripts/ace/*.js
 
 So, you can add in application.js lines like this:
 
