@@ -14,7 +14,7 @@ module AcedRails
         suffix = '-noconflict'
       end
 
-      result = ["ace/ace#{suffix}.js"]
+      result = ["aced-api.js" ,"ace/ace#{suffix}.js"]
 
       @@themes.each do |theme|
         result << "ace/theme-#{theme}#{suffix}.js"
