@@ -3,6 +3,8 @@
   ($) ->
     methods = {
       init: (options) ->
+        options = {} unless options
+
         unless options['id']
           if @.attr('id').length > 0
             options['id'] = @.attr 'id'
@@ -15,7 +17,7 @@
         @.data 'aced_editor', editor
 
         delete options['id']
-        @.aced_conf options
+        @.aced 'conf', options
       ,
       conf: (options) ->
         unless @.data('aced_editor')
@@ -28,6 +30,7 @@
         if options['mode']
           editorMode = require("ace/mode/#{options['mode']}").Mode
           editor.getSession().setMode(new editorMode())  
+        @
     }  
 
     $.fn.aced = (method) ->
@@ -37,5 +40,5 @@
         return methods.init.apply @, arguments
       else
         $.error 'No method error'
-        
+
 )(jQuery)
