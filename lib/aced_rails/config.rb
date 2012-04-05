@@ -4,14 +4,24 @@ module AcedRails
   end
 
   module Config
-    mattr_accessor :themes, :keybindings, :modes, :type
+    mattr_accessor  :themes,
+                    :keybindings,
+                    :modes,
+                    :type,
+                    :uncompressed_envs
+
     @@themes = @@keybindings = @@modes = []
     @@type = :normal
+    @@uncompressed_envs = ['development']
 
     def self.get_assets_files
       suffix = ''
       if @@type == :noconflict
         suffix = '-noconflict'
+      end
+
+      if @@uncompressed_envs.include?(Rails.env)
+        suffix += '-uncompressed'
       end
 
       result = ["aced-api.js" ,"ace/ace#{suffix}.js"]
