@@ -48,10 +48,43 @@ Pretty simple, isn't it? This helper requires all js from configuration.
 
 The most important feature is jQuery plugin:
 
-* init
+* init example. Convert div to ACE editor with specified theme and mode
 
 ```javascript
   $(target_div).aced('init', {theme: 'twilight', mode: 'textile'});
+```
+
+* conf example (it use same options, but requires already initialized div):
+
+```javascript
+  $(aced_div).aced('conf', {content: 'Awesome!'});
+```
+
+* there are no necessary options for init or conf. The complete list of available options:
+
+** *id* - set element id (only for init)
+** *theme* - set theme
+** *mode* - set mode
+** *content* - set content of editor
+** *on_change* - callback for change event (ACE API's callback, nothing special)
+
+* textarea magick - aced_ta (have only 'init' method). It hides textarea, create "aced div" and set callback for content synchronization:
+
+```javascript
+$('#post_body').aced_ta('init', {class: 'span8', theme: 'twilight', mode: 'textile', rows_to_px: 15, normalize: 'yes'});
+```
+
+* additional options for aced_ta:
+
+** *class* - list of classes for div
+** *style* - pure css for div
+** *rows_to_px* - add height css options with value based on given number and rows textarea attribute
+** *normailze* - add "position: relative; margin-left: 0;" to style (useful for twitter bootstrap forms)
+
+* aced and aced_ta uses jQuery.data feature for store editor object:
+
+```javascript
+var ace_editor_session = $(aced_div).data('aced_editor').getSession();
 ```
 
 Contributing
