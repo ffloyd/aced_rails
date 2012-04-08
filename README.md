@@ -78,7 +78,7 @@ $('#post_body').aced_ta('init', {class: 'span8', theme: 'twilight', mode: 'texti
   
   * *class* - list of classes for div
   * *style* - pure css for div
-  * *rows_to_px* - add height css options with value based on given number and rows textarea attribute
+  * *rows_to_px* - add height css option to style with value based on given number and rows textarea attribute
   * *normailze* - add "position: relative; margin-left: 0;" to style (useful for twitter bootstrap forms)
 
 * aced and aced_ta uses jQuery.data feature for store editor object:
