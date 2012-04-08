@@ -1,14 +1,18 @@
 AcedRails
 =========
 
-This gem provide some generators and helpers for using [Ajax.org Cloud9 Editor](http://ajaxorg.github.com/ace/) (ACE).
+This gem provide some generators and helpers for using [Ajax.org Cloud9 Editor](http://ajaxorg.github.com/ace/) (ACE) in Rails applications.
+
+I wrote a little jQuery plugin as part of this gem. It gives coll interface to control basic functions of ACE and integrate ACE into forms without bookmarklet magick and limitations (by default ACE doesn't support textarea).
 
 This's my first gem, so i'll be pleasure for any comments or pull requests.
 
-My English is bad, i know. So, i'll be glad to any grammar fixes too. =)
+My English is bad (terrific, awful etc.), i know. So, i'll be glad to any grammar fixes too. =)
 
 Installation
 ------------
+
+*Rails 3.1+ is required.*
 
 Add this line to your application's Gemfile:
 
@@ -18,26 +22,37 @@ And then execute:
 
     $ bundle
 
-Or install it yourself as:
+And generate config file:
 
-    $ gem install aced_rails
+    $ rails g aced_rails:install
+
+Configuration
+-------------
+
+Config file is simple one and well commented. Just read it.
+
+The main feature - you select all necessary ACE's javascripts inside config file. Gem will add them and aced-api.js in the pipeline.
 
 Usage
 -----
 
-*Gem is under construction...*
+I suppose you already have configured aced.
 
-At this moment this gem only provides all ACE's javascripts in vendor/javascripts/ace/*.js
+Gem provides hepler, that should be used instantly after yours javascript_include_tags:
 
-So, you can add in application.js lines like this:
-
-```javascript
-//= require ace/ace
-//= require ace/theme-twilight
-//= require ace/mode-textile
+```ruby
+  aced_tag
 ```
 
-And follow ACE's wiki for instructions.
+Pretty simple, isn't it? This helper requires all js from configuration.
+
+The most important feature is jQuery plugin:
+
+* init
+
+```javascript
+  $(target_div).aced('init', {theme: 'twilight', mode: 'textile'});
+```
 
 Contributing
 ------------
