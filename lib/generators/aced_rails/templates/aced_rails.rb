@@ -18,5 +18,6 @@ AcedRails.configure do |config|
   # scala, scss, sh, sql, svg, text, textile, xml, xquery
   config.modes = [:textile]
   
+  # don't touch this
   #config.uncompressed_envs = ['development']
 end
