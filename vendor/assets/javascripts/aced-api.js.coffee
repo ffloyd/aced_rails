@@ -63,6 +63,8 @@
 
         options == {} unless options
 
+        options = ($.extend {content: @.val()}, options)
+
         #random id
         id_num = 1
         id_num = $.random(1000) while $("#aced_editor_#{id_num}").length > 0
