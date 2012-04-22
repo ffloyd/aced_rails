@@ -24,7 +24,7 @@ module AcedRails
         suffix += '-uncompressed'
       end
 
-      result = ["aced-api.js" ,"ace/ace#{suffix}.js"]
+      result = ["aced-api.js", "jquery.random.js", "ace/ace#{suffix}.js"]
 
       @@themes.each do |theme|
         result << "ace/theme-#{theme}#{suffix}.js"
