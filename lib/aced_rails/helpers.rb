@@ -9,5 +9,3 @@ module AcedRails
     end
   end
 end
-
-ActionView::Base.send :include, AcedRails::AcedHelpers

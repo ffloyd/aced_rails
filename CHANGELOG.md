@@ -1,4 +1,9 @@
-v 1.0.1
+v 0.1.2
+=======
+
+* helpers bugfix
+
+v 0.1.1
 =======
 
 * many bugfixes
