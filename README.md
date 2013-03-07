@@ -2,6 +2,8 @@
 
 Ace version is 1.0.0
 
+[Demo app](http://aced-rails.herokuapp.com/)
+
 This gem provide some generators and helpers for using [Ajax.org Cloud9 Editor](http://ajaxorg.github.com/ace/) (ACE) in Rails applications.
 
 I wrote a little jQuery plugin as part of this gem. Most important feature - is transform textarea into ace editor (hide textarea, place div instead and sync text). See below for more information.
