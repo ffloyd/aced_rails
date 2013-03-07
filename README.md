@@ -1,4 +1,4 @@
-# AcedRails [![Gem Version](https://badge.fury.io/rb/aced_rails.png)](http://badge.fury.io/rb/aced_rails) [![Dependency Status](https://gemnasium.com/ffloyd/aced_rails.png)](https://gemnasium.com/ffloyd/aced_rails) [![Build Status](https://travis-ci.org/ffloyd/aced_rails.png)](https://travis-ci.org/ffloyd/aced_rails) [![endorse](http://api.coderwall.com/ffloyd/endorsecount.png)](http://coderwall.com/ffloyd)
+# AcedRails [![Gem Version](https://badge.fury.io/rb/aced_rails.png)](http://badge.fury.io/rb/aced_rails) [![Dependency Status](https://gemnasium.com/ffloyd/aced_rails.png)](https://gemnasium.com/ffloyd/aced_rails) [![endorse](http://api.coderwall.com/ffloyd/endorsecount.png)](http://coderwall.com/ffloyd)
 
 Ace version is 1.0.0
 
