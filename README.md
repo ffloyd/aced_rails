@@ -2,7 +2,7 @@
 
 Ace version is 1.0.0
 
-[Demo app](http://aced-rails.herokuapp.com/)
+[Demo app](http://aced-rails.herokuapp.com/) and [repo](https://github.com/ffloyd/aced_rails-test)
 
 This gem provide some generators and helpers for using [Ajax.org Cloud9 Editor](http://ajaxorg.github.com/ace/) (ACE) in Rails applications.
 
