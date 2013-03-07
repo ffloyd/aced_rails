@@ -4,7 +4,7 @@ require File.expand_path('../lib/aced_rails/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["Roman Kolesnev"]
   gem.email         = ["rvkolesnev@gmail.com"]
-  gem.description   = %q{ACE editor for Rails 3.1+ apps}
+  gem.description   = %q{ACE editor for Rails 3.2+ apps}
   gem.summary       = %q{Provide some helpers and generators for using Ajax.org Cloud9 Editor}
   gem.homepage      = "https://github.com/ffloyd/aced_rails"
 
@@ -15,5 +15,5 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = AcedRails::VERSION
 
-  gem.add_dependency "rails", "~> 3.1"
+  gem.add_dependency "rails", "~> 3.2"
 end

@@ -1,18 +1,15 @@
-AcedRails
-=========
+# AcedRails [![Gem Version](https://badge.fury.io/rb/aced_rails.png)](http://badge.fury.io/rb/aced_rails) [![Dependency Status](https://gemnasium.com/ffloyd/aced_rails.png)](https://gemnasium.com/ffloyd/aced_rails) [![Build Status](https://travis-ci.org/ffloyd/aced_rails.png)](https://travis-ci.org/ffloyd/aced_rails) [![endorse](http://api.coderwall.com/ffloyd/endorsecount.png)](http://coderwall.com/ffloyd)
+
+Ace version is 1.0.0
 
 This gem provide some generators and helpers for using [Ajax.org Cloud9 Editor](http://ajaxorg.github.com/ace/) (ACE) in Rails applications.
 
-I wrote a little jQuery plugin as part of this gem. It gives coll interface to control basic functions of ACE and integrate ACE into forms without bookmarklet magick and limitations (by default ACE doesn't support textarea).
-
-This's my first gem, so i'll be pleasure for any comments or pull requests.
-
-My English is bad (terrific, awful etc.), i know. So, i'll be glad to any grammar fixes too. =)
+I wrote a little jQuery plugin as part of this gem. Most important feature - is transform textarea into ace editor (hide textarea, place div instead and sync text). See below for more information.
 
 Installation
 ------------
 
-*Rails 3.1+ is required.*
+*Rails 3.2+ is required.*
 
 Add this line to your application's Gemfile:
 
@@ -31,7 +28,7 @@ Configuration
 
 Config file is simple one and well commented. Just read it.
 
-The main feature - you select all necessary ACE's javascripts inside config file. Gem will add them and aced-api.js in the pipeline.
+The main feature - you select all necessary ACE's javascripts inside config file. Gem will add them and aced-rails.js in the pipeline.
 
 Usage
 -----
@@ -44,47 +41,46 @@ Gem provides hepler, that should be used instantly after yours javascript_includ
   aced_tag
 ```
 
-Pretty simple, isn't it? This helper requires all js from configuration.
-
 The most important feature is jQuery plugin:
 
 * init example. Convert div to ACE editor with specified theme and mode
 
 ```javascript
-  $(target_div).aced('init', {theme: 'twilight', mode: 'textile'});
+  $(target_div).acedInit({theme: 'gihub', mode: 'javascript'});
 ```
 
-* conf example (it use same options, but requires already initialized div):
+* get ace editor object:
 
 ```javascript
-  $(aced_div).aced('conf', {content: 'Awesome!'});
+  editor = $(aced_div).aced();
+  // or
+  editor = $(aced_div).data('ace-editor');
 ```
 
-* there are no necessary options for init or conf. The complete list of available options:
-
-  * *id* - set element id (only for init)
-  * *theme* - set theme
-  * *mode* - set mode
-  * *content* - set content of editor
-  * *on_change* - callback for change event (ACE API's callback, nothing special)
-
-* textarea magick - aced_ta (have only 'init' method). It hides textarea, create "aced div" and set callback for content synchronization:
+* get session
 
 ```javascript
-$('#post_body').aced_ta('init', {class: 'span8', theme: 'twilight', mode: 'textile', rows_to_px: 15, normalize: 'yes'});
+  session = $(aced_div).acedSession();
+  // or
+  session = $(aced_div).aced().getSession();
+```
+* transform textarea to ace editor (hide textarea, create div and link it):
+
+```javascript
+  $(textarea).acedInitTA({theme: 'github', mode: 'javascript'});
+
+  // get linked div
+  $(textarea).data('ace-div') //return jQuery object
 ```
 
-* additional options for aced_ta:
-  
-  * *class* - list of classes for div
-  * *style* - pure css for div
-  * *rows_to_px* - add height css option to style with value based on given number and rows textarea attribute
-  * *normailze* - add "position: relative; margin-left: 0;" to style (useful for twitter bootstrap forms)
+* without javasript:
 
-* aced and aced_ta uses jQuery.data feature for store editor object:
+```html
+  <div ace-editor ace-theme="github" ace-mode="javascript"/>
 
-```javascript
-var ace_editor_session = $(aced_div).data('aced_editor').getSession();
+  <textarea ace-editor ace-theme="github" ace-mode="javascript">
+    alert('Hi!');
+  </textarea>
 ```
 
 Contributing

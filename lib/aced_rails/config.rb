@@ -7,33 +7,33 @@ module AcedRails
     mattr_accessor  :themes,
                     :keybindings,
                     :modes,
-                    :type,
-                    :uncompressed_envs
+                    :exts,
+                    :workers
 
-    @@themes = @@keybindings = @@modes = []
-    @@type = :normal
-    @@uncompressed_envs = ['development']
+    @@themes = @@keybindings = @@modes = @@exts = @@workers = []
+    @@noconflict = false
 
     def self.get_assets_files
-      suffix = ''
-      if @@type == :noconflict
-        suffix = '-noconflict'
+      result = ["aced-rails.js", "jquery.random.js", "ace/ace.js"]
+
+      (@@themes + ['textmate']).each do |theme|
+        result << "ace/theme-#{theme}.js"
       end
 
-      if @@uncompressed_envs.include?(Rails.env)
-        suffix += '-uncompressed'
-      end
-
-      result = ["aced-api.js", "jquery.random.js", "ace/ace#{suffix}.js"]
-
-      @@themes.each do |theme|
-        result << "ace/theme-#{theme}#{suffix}.js"
-      end
       @@keybindings.each do |keybinding|
-        result << "ace/keybinding-#{keybinding}#{suffix}.js"
+        result << "ace/keybinding-#{keybinding}.js"
       end
+
       @@modes.each do |mode|
-        result << "ace/mode-#{mode}#{suffix}.js"
+        result << "ace/mode-#{mode}.js"
+      end
+
+      @@exts.each do |mode|
+        result << "ace/ext-#{mode}.js"
+      end
+
+      @@workers.each do |mode|
+        result << "ace/worker-#{mode}.js"
       end
 
       result
