@@ -10,7 +10,7 @@ AcedRails.configure do |config|
 
   # select modes
   # available modes:
-  #   abap, asciidoc, c9search, c_cpp, clojure, coffee, coldfusion, 
+  #   abap, asciidoc, c9search, c_cpp, clojure, coffee, coldfusion,
   #   csharp, css, curly, dart, diff, django, dot, glsl, golang, groovy,
   #   haml, haxe, html, jade, java, javascript, json, jsp, jsx, latex, less,
   #   liquid, lisp, livescript, lua, luapage, lucene, makefile, markdown,
@@ -23,6 +23,11 @@ AcedRails.configure do |config|
   # available workers (use in pair with themes):
   #   coffee, css, javascript, json, php, xquery
   config.workers = [:javascript]
+
+  # select keybindings
+  # available keybindings:
+  #   emacs, vim
+  config.keybindings = []
 
   # select extensions:
   # available extensions:

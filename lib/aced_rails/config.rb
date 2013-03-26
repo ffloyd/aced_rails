@@ -14,7 +14,7 @@ module AcedRails
     @@noconflict = false
 
     def self.get_assets_files
-      result = ["aced-rails.js", "jquery.random.js", "ace/ace.js"]
+      result = ["aced-rails.js", "ace/ace.js"]
 
       (@@themes + ['textmate']).each do |theme|
         result << "ace/theme-#{theme}.js"
@@ -38,6 +38,6 @@ module AcedRails
 
       result
     end
-    
+
   end
 end
