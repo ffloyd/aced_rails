@@ -39,10 +39,10 @@ I suppose you already have configured aced.
 
 Aced provides a helper 'include_tag' that should be used instantly after your javascript_include_tag(commonly found in the application layout file):
 
-```ruby
-  <%= stylesheet_link_tag "application" %>
-  <%= javascript_include_tag "application" %>
-  <%= aced_tag %>
+```haml
+  = stylesheet_link_tag "application"
+  = javascript_include_tag "application"
+  = aced_tag
 ```
 
 The most important feature is jQuery plugin:
@@ -96,7 +96,7 @@ The most important feature is jQuery plugin:
       = f.text_field :title
     .field
       = f.label :body
-      = f.text_area :body, {"ace-editor" => "", "ace-mode" => "text", "ace-theme" => "github", style: "height: 300px;"}
+      = f.text_area :body,{"ace-editor" => "", "ace-mode" => "text", "ace-theme" => "github", style: "height: 300px;"}
     .actions
       = f.submit :save, class: "button"
 ```
