@@ -1,4 +1,4 @@
-# AcedRails [![Gem Version](https://badge.fury.io/rb/aced_rails.png)](http://badge.fury.io/rb/aced_rails) [![Dependency Status](https://gemnasium.com/ffloyd/aced_rails.png)](https://gemnasium.com/ffloyd/aced_rails) [![endorse](http://api.coderwall.com/ffloyd/endorsecount.png)](http://coderwall.com/ffloyd)
+# AcedRails [![Gem Version](https://badge.fury.io/rb/aced_rails.png)](http://badge.fury.io/rb/aced_rails) [![endorse](http://api.coderwall.com/ffloyd/endorsecount.png)](http://coderwall.com/ffloyd)
 
 Ace version is 1.0.0
 
@@ -28,19 +28,21 @@ And generate config file:
 Configuration
 -------------
 
-Config file is simple one and well commented. Just read it.
+The config file allows you to change themes, modes, workers, and key-bindings. It is simple and well commented. Just read it.
 
-The main feature - you select all necessary ACE's javascripts inside config file. Gem will add them and aced-rails.js in the pipeline.
+The main feature - The Gem includes aced-rails.js and necessary ACE javascripts to the asset_pipe as they are setup in the config file.
 
 Usage
 -----
 
 I suppose you already have configured aced.
 
-Gem provides hepler, that should be used instantly after yours javascript_include_tags:
+Aced provides a helper 'include_tag' that should be used instantly after your javascript_include_tag(commonly found in the application layout file):
 
-```ruby
-  aced_tag
+```haml
+  = stylesheet_link_tag "application"
+  = javascript_include_tag "application"
+  = aced_tag
 ```
 
 The most important feature is jQuery plugin:
@@ -84,6 +86,21 @@ The most important feature is jQuery plugin:
     alert('Hi!');
   </textarea>
 ```
+
+* with rails form_for helper:
+
+```haml
+  = form_for @article do |f|
+    .field
+      = f.label :title
+      = f.text_field :title
+    .field
+      = f.label :body
+      = f.text_area :body,{"ace-editor" => "", "ace-mode" => "text", "ace-theme" => "github", style: "height: 300px;"}
+    .actions
+      = f.submit :save, class: "button"
+```
+
 
 Contributing
 ------------
