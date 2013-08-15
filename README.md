@@ -35,16 +35,6 @@ The main feature - The Gem includes aced-rails.js and necessary ACE javascripts 
 Usage
 -----
 
-I suppose you already have configured aced.
-
-Aced provides a helper 'include_tag' that should be used instantly after your javascript_include_tag(commonly found in the application layout file):
-
-```haml
-  = stylesheet_link_tag "application"
-  = javascript_include_tag "application"
-  = aced_tag
-```
-
 The most important feature is jQuery plugin:
 
 * init example. Convert div to ACE editor with specified theme and mode

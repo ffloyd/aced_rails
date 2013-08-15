@@ -14,7 +14,7 @@ module AcedRails
     @@noconflict = false
 
     def self.get_assets_files
-      result = ["aced-rails.js", "ace/ace.js"]
+      result = []
 
       (@@themes + ['textmate']).each do |theme|
         result << "ace/theme-#{theme}.js"
