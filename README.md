@@ -101,6 +101,23 @@ The most important feature is jQuery plugin:
       = f.submit :save, class: "button"
 ```
 
+Production environment
+----------------------
+
+To precompile all the libraries required for this gem to work on production environments, add the following to your production environment file.
+
+```ruby
+  # app/initializers/production.rb
+
+  # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
+  config.assets.precompile += %w(
+    ace/ace.js
+    ace/*
+    aced-rails.js
+  )
+```
+
+Also works for heroku too.
 
 Contributing
 ------------
