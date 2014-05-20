@@ -41,18 +41,22 @@ $.fn.extend
 $(document).ready ->
   $('div[ace-editor]').each ->
     div = $(this)
-    theme = div.attr 'ace-theme'
-    mode  = div.attr 'ace-mode'
+    theme   = div.attr 'ace-theme'
+    mode    = div.attr 'ace-mode'
+    worker  = div.attr 'ace-worker'
 
     div.acedInit
       theme: theme
       mode:  mode
+      worker worker
 
   $('textarea[ace-editor]').each ->
     ta = $(this)
-    theme = ta.attr 'ace-theme'
-    mode  = ta.attr 'ace-mode'
+    theme   = ta.attr 'ace-theme'
+    mode    = ta.attr 'ace-mode'
+    worker  = ta.attr 'ace-worker'
 
     ta.acedInitTA
       theme: theme
       mode:  mode
+      worker worker
