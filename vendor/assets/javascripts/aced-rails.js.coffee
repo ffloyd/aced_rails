@@ -48,7 +48,7 @@ $(document).ready ->
     div.acedInit
       theme: theme
       mode:  mode
-      worker worker
+      worker: worker
 
   $('textarea[ace-editor]').each ->
     ta = $(this)
@@ -59,4 +59,4 @@ $(document).ready ->
     ta.acedInitTA
       theme: theme
       mode:  mode
-      worker worker
+      worker: worker
