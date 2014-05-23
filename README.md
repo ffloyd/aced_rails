@@ -101,6 +101,21 @@ The most important feature is jQuery plugin:
       = f.submit :save, class: "button"
 ```
 
+Heroku environment
+----------------------
+
+The following lines will help you through the asset pre-compilation process on heroku.
+
+```ruby
+  # app/initializers/production.rb
+
+  # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
+  config.assets.precompile += %w(
+    ace/ace.js
+    ace/*
+    aced-rails.js
+  )
+```
 
 Contributing
 ------------
