@@ -50,7 +50,7 @@ The most important feature is jQuery plugin:
 * init example. Convert div to ACE editor with specified theme and mode
 
 ```javascript
-  $(target_div).acedInit({theme: 'gihub', mode: 'javascript'});
+  $(target_div).acedInit({theme: 'github', mode: 'javascript'});
 ```
 
 * get ace editor object:
