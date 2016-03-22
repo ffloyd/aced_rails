@@ -1,3 +1,7 @@
+# Abadoned!
+
+I've no time and reasons to maintain this repo. I'm ready to transfer it to someone else. If you want to become a new maintainer please contact me via github issue or rvkolesnev@gmail.com
+
 # AcedRails [![Gem Version](https://badge.fury.io/rb/aced_rails.png)](http://badge.fury.io/rb/aced_rails) [![endorse](http://api.coderwall.com/ffloyd/endorsecount.png)](http://coderwall.com/ffloyd)
 
 Ace version is 1.0.0
